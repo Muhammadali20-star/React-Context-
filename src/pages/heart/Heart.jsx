@@ -1,6 +1,6 @@
 import { useStateValue } from "@/context";
 import React from "react";
-import { FaRegHeart } from "react-icons/fa";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 const Heart = () => {
   const [state, dispatch] = useStateValue();
@@ -13,7 +13,7 @@ const Heart = () => {
       <div key={product.id} className="bg-white p-4 rounded-xl shadow hover:shadow-lg">
         <div className="relative mb-4">
           <img src={product.image} alt={product.title} onClick={() => navigate(`/product/${product.id}`)} className="w-full h-48 object-contain"/>
-          <button onClick={() => dispatch({ type: "LIKED", payload: product })}className="absolute top-2 right-2 text-xl text-gray-600 hover:text-blue-600"><FaRegHeart /></button>
+          <button onClick={() => dispatch({ type: "LIKED", payload: product })}className="absolute top-2 right-2 text-xl text-gray-600 hover:text-blue-600"> <FaHeart className="text-red-500" /></button>
         </div>
         <div className="space-y-1 text-sm text-gray-700">
           <h3 className="font-semibold truncate" title={product.title}> {product.title} </h3>
